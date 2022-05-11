@@ -7,10 +7,26 @@
         valueField="value"
         [defaultItem]="defaultItem"
         (valueChange)="handleFilterChange($event)"
-		[style.width.px]="300">
+		[style.width.px]="450">
 
     </kendo-dropdownlist>
 </p>
+
+<table>
+    <thead>
+    <th>Name</th>
+    <th>Index</th>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let hero of Heroes">
+        <td><div [innerHTML]=hero.name></div></td> <td>{{hero.id}}</td>
+
+
+    </tr>
+    </tbody>
+
+</table>
 <!--
 <kendo-grid
     [data]="(gridItems | async)!"

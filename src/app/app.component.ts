@@ -7,11 +7,16 @@ import { ProductService } from './product.service';
 import { Observable } from 'rxjs';
 
 const HEROES = [
-    {id: 1, name:'Superman'},
-    {id: 2, name:'Batman'},
-    {id: 5, name:'BatGirl'},
-    {id: 3, name:'Robin'},
-    {id: 4, name:'Flash'}
+    {id: 1, name:"<em>Sup</em>erman", "address":  "123 Main Street, North Dakota"},
+    {id: 2, name:'<b>Bat</b>man', "address":  "123 Gido Street, North Dakota"},
+    {id: 3, name:'BatGirl', "address":  "123 Zerbra Street, North Dakota"},
+    {id: 4, name:'Robin', "address":  "123 Exfart Street, North Dakota"},
+    {id: 5, name:'Flash', "address":  "123 Windex Street, North Dakota"},
+    {id: 6, name:'Dotty', "address":  "123 Elcore Street, North Dakota"},
+    {id: 9, name:'Meagan', "address":  "123 Devine Street, North Dakota"},
+    {id: 7, name:'IdiotBoy', "address":  "123 Amith Street, North Dakota"},
+    {id: 8, name:'Flash', "address":  "456 Main Street, West Dakota"},
+
 ];
 
 @Component({
@@ -19,26 +24,7 @@ const HEROES = [
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     providers: [ProductService]
-
-    template:  `
-    <table>
-        <thead>
-        <th>Name</th>
-        <th>Index</th>
-        </thead>
-        
-        <tbody>
-            <tr *ngFor="let hero of Heroes">
-                <td>{{hero.name}}</td> <td>{{hero.id}}</td>
-            </tr>
-        </tbody>
-        
-    </table>`
 })
-
-export class Heroes {
-    heroes=HEROES;
-}
 
 export class AppComponent {
     // used for the DropDownList
@@ -50,6 +36,7 @@ export class AppComponent {
     public pageSize: number = 20;
     public skip: number = 0;
     public sortDescriptor: SortDescriptor[] = [];
+    public Heroes = HEROES;
     // public filterDescriptor: FilterDescriptor[] = [];
     public filterTerm: number | null = null;
     constructor(private service: ProductService) {
